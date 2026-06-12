@@ -37,7 +37,7 @@ using namespace std;
 // countVowels: return how many vowels (a,e,i,o,u, upper or lower case)
 // appear in the given string.
 int countVowels(const string& text) {
-    int count;
+    int count=0;
     for(char c :text) {
         char lc=(c>='A' && c<='Z') ? (char) (c+32): c;
         if(lc=='a'|| lc=='e'|| lc=='i'|| lc=='o'|| lc=='u')
@@ -141,7 +141,7 @@ bool writeLines(const string& filename, const vector<string>& lines) {
     ofstream out(filename);
    if(!out.is_open()) return false;
     for(const string& line : lines)
-    out<< line << "\n",
+    out<< line << "\n";
     out.close();
     return true;
         // TODO: replace
@@ -157,7 +157,7 @@ vector<string> readLines(const string& filename) {
      if(!in.is_open()) return result;
      string line ;
      while (getline (in,line))
-     result.push_back(line),
+     result.push_back(line);
      in.close();
     // TODO: open an ifstream, use getline() in a loop to fill 'result'.
     return result; // TODO: replace contents
